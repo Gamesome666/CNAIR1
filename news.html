@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻详情</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* 导航栏样式 */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-dropdown {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .search-input {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            width: 350px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-btn {
+            padding: 8px 30px;
+            background-color: #0000CD;
+            color: #fff;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .search-btn:hover {
+            background-color: #0000B8;
+        }
+
+        .nav-bar {
+            background-color: #0000CD;
+        }
+
+        .nav-menu {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            flex: 1;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 40px 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 30px;
+        }
+
+        .article-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .article-meta span {
+            margin: 0 10px;
+        }
+
+        .article-content {
+            font-size: 16px;
+            color: #555;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+
+        .article-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .article-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-image-caption {
+            font-size: 14px;
+            color: #999;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 30px;
+            }
+
+            .article-title {
+                font-size: 24px;
+            }
+
+            .article-content {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="header-top">
+            <div class="logo">
+                <img src="文字和图片素材/image.png" alt="CNAIR.COM 航空旅游网">
+            </div>
+            <div class="search-box">
+                <select class="search-dropdown">
+                    <option>新闻▼</option>
+                </select>
+                <input type="text" class="search-input" placeholder="请输入新闻标题">
+                <button class="search-btn">搜 索</button>
+            </div>
+        </div>
+        <nav class="nav-bar">
+            <ul class="nav-menu">
+                <li><a href="#">首 页</a></li>
+                <li><a href="#">航旅新闻</a></li>
+                <li><a href="#">航旅图片</a></li>
+                <li><a href="#">酒店预订</a></li>
+                <li><a href="#">机票查询</a></li>
+                <li><a href="#">机票验真</a></li>
+                <li><a href="#">航空知识</a></li>
+                <li><a href="#">出行参考</a></li>
+                <li><a href="#">飞机机型</a></li>
+                <li><a href="#">旅游景点</a></li>
+                <li><a href="#">外国景点</a></li>
+                <li><a href="#">世界遗产</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 文章头部 -->
+        <div class="article-header">
+            <h1 class="article-title">机场运行管理工作会议顺利召开</h1>
+            <div class="article-meta">
+                <span>发布时间：2025年10月22日</span>
+                <span>|</span>
+                <span>来源：本站</span>
+                <span>|</span>
+                <span>通讯员：曹智</span>
+            </div>
+        </div>
+
+        <!-- 文章内容 -->
+        <div class="article-content">
+            <p>为进一步提升机场运行管理水平，确保航班安全高效运行，近日，机场组织召开了运行管理工作会议。会议由机场运行管理部门负责人主持，各相关部门负责人及业务骨干参加了会议。</p>
+
+            <!-- 文章配图 -->
+            <div class="article-image">
+                <img src="文字和图片素材/1.png" alt="工作会议现场">
+                <div class="article-image-caption">工作人员正在讨论运行管理方案</div>
+            </div>
+
+            <p>会议上，与会人员就当前机场运行中存在的问题进行了深入分析和讨论，重点围绕运行安全、服务质量、应急保障等方面展开交流。大家一致认为，要进一步强化责任意识，完善工作流程，提高协同配合能力，确保机场运行安全平稳。</p>
+
+            <p>会议强调，各部门要加强沟通协调，建立健全信息共享机制，及时发现和解决运行中的各类问题。同时，要持续优化服务流程，提升旅客满意度，为广大旅客提供更加优质便捷的出行服务。</p>
+
+            <p>通过此次会议，进一步统一了思想认识，明确了工作目标和任务，为下一步做好机场运行管理工作奠定了坚实基础。与会人员表示，将以更加饱满的工作热情和更加务实的工作作风，全力以赴做好各项工作，为机场高质量发展贡献力量。</p>
+        </div>
+    </div>
+</body>
+</html>
